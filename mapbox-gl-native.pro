@@ -2,7 +2,7 @@ TARGET = qmapboxgl
 
 load(qt_helper_lib)
 
-CONFIG += qt c++14 exceptions warn_off staticlib object_parallel_to_source
+CONFIG += qt c++14 exceptions warn_on staticlib object_parallel_to_source
 CONFIG -= c++1z
 
 QT += network-private \
@@ -20,6 +20,9 @@ QMAKE_CXXFLAGS += \
     -ftemplate-depth=1024 \
     -fvisibility-inlines-hidden \
     -fvisibility=hidden
+
+QMAKE_CFLAGS += -Werror
+QMAKE_CXXFLAGS += -Werror
 
 android|win32|darwin|qnx {
     SOURCES += \

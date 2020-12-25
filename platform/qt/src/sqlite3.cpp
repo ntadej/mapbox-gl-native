@@ -187,7 +187,7 @@ void Database::exec(const std::string &sql) {
 }
 
 void DatabaseImpl::exec(const std::string& sql) {
-    QStringList statements = QString::fromStdString(sql).split(';', QString::SkipEmptyParts);
+    QStringList statements = QString::fromStdString(sql).split(';', Qt::SkipEmptyParts);
     statements.removeAll("\n");
     for (QString statement : statements) {
         if (!statement.endsWith(';')) {
